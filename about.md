@@ -1,8 +1,9 @@
 ---
 layout: page
 title: About
-subtitle: Just who the hell you think I am?
+subtitle: Resume
 permalink: /about/
 ---
 
-Graduate student in Data Science, Engineering student at Ecole Centrale de Lille
+Engineering student at Ecole Centrale de Lille.
+First year graduate student in Data Science at the University of Lille.
