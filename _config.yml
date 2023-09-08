@@ -7,8 +7,8 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://olithub.github.io" # the base hostname & protocol for your site
 
 author:
-  fullname: olivier Anoufa
-  googleplus: https://www.google.com/+MotaquillahMaddane
+  fullname: Olivier Anoufa
+  email: oanoufa@gmail.com
   github: olithub
   twitter: electrik_frog
   # disqus: your_disqus_forum_shortname
