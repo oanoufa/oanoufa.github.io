@@ -2,7 +2,7 @@
 layout: post
 title:  "Automatic detection of orchestral blends from scores"
 subtitle: "Master 1 Data Science research project"
-date:   2023-09-26 13:56:45
+date:   2023-09-11 13:56:45
 categories: [data-science, machine-learning, deep-learning]
 ---
 
