@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Sample post from Daktilo"
-subtitle: "What you can do with it!"
-date:   2014-08-19 23:56:45
-categories: [tool]
+title:  "Automatic detection of orchestral blends from scores"
+subtitle: "Master 1 Data Science research project"
+date:   2023-09-26 13:56:45
+categories: [data-science, machine-learning, deep-learning]
 ---
 
 Just a sample post to show some of the *typography* elements supported from
@@ -30,6 +30,16 @@ var s = new Switch();
 
 s.storeAndExecute(switchUp);
 s.storeAndExecute(switchDown);
+{% endhighlight %}
+
+Jekyll also offers powerful support for code snippets:
+
+{% highlight ruby %}
+def print_hi(name)
+  puts "Hi, #{name}"
+end
+print_hi('Tom')
+#=> prints 'Hi, Tom' to STDOUT.
 {% endhighlight %}
 
 
