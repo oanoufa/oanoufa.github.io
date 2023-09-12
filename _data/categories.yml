@@ -1,8 +1,14 @@
-- slug: design
-  name: Design
+- slug: data-science
+  name: Data Science
 
-- slug: tools
-  name: Tools
+- slug: computer-science
+  name: Computer Science
 
-- slug: productivity
-  name: Productivity
+- slug: machine-learning
+  name: Machine Learning
+
+- slug: artificial-intelligence
+  name: Artificial Intelligence
+
+- slug: deep-learning
+  name: Deep Learning
