@@ -10,8 +10,6 @@ categories: [data-science, machine-learning, deep-learning]
 
 In the Taxonomy of Orchestral Grouping Effects, we focus on *concurrent grouping*, i.e. the lowest level of the taxonomy. Blends vs non-blends of sounds contribute to the formation of concurrent grouping events. These are the basic building blocks for orchestral layering and for the formation of different “orchestral textures”.
 
-![Alt text](images/Taxonomy1.png "TOGE Concurrent Grouping")
-
 ### Research question and goal
 
 The main hypothesis that we have, and that we want to verify in this work, is that many perceptual phenomena are contained in the score, intentionally planned or not by the composer. With this work we want to see to what extent this information can be extracted, to improve on the accuracy of previous studies, and to focus on the peculiarities of misclassified cases.
