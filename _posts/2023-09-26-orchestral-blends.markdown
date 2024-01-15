@@ -56,3 +56,5 @@ We create a table like this:
 To reconstruct a list we use a distance-based clustering for the tracks in each measure. It uses as distance something derived from the results of the classification problem, and it gives back clusters with a tree structure. This clustering models assembles a tree or a space to show the proximity between each part.
 
 The two models will be separate at first. We could thing to stack them in the future, and to have a loss function only on the final result.
+
+[Gitlab of the project](https://gitlab.com/algomus.fr/orchard-blends)
