@@ -40,19 +40,10 @@ Consider a blend as a list of instruments at a given bar location, ``[11-15] (Vl
 
 > ``(Vln1, Vln2, Cb) = [(Vln1, Vln2), (Vln1, Cb), (Vln2, Cb)]``
 
-In this way we treat the problem as a binary classification for couples of instruments at a given location: $1$ for blend, $0$ for no-blend.
-
-We create a table like this:
-
-|  PieceID  | MeasureID | Part1 | Part2 |   FeaturesTrack1  |   FeaturesTrack2  | CrossTrackFeatures | Target: Blend (1/0)  |
-|:---------:|:---------:|:-----:|:-----:|:-----------------:|:-----------------:|:------------------:|:--------------------:|
-| Mozart... |     1     | Vln1  |  Vln2 |  feat1/.../featx  |  feat1/.../featx  |   feat1/.../featx  |           1          |
-
-- We arrive here by joining 4 different tables.
-- Is this the most efficient order? Could it be better to do first all the measures for one couple of instruments?
+In this way we treat the problem as a binary classification for couples of instruments at a given location: 1 for blend, 0 for no-blend.
 
 To reconstruct a list we use a distance-based clustering for the tracks in each measure. It uses as distance something derived from the results of the classification problem, and it gives back clusters with a tree structure. This clustering models assembles a tree or a space to show the proximity between each part.
 
-The two models will be separate at first. We could thing to stack them in the future, and to have a loss function only on the final result.
+The two models will be separated at first. We could think to stack them in the future, and to have a loss function only on the final result.
 
 [Gitlab of the project](https://gitlab.com/algomus.fr/orchard-blends)
