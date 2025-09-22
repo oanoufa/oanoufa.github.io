@@ -6,7 +6,7 @@ date: 2025-09-22 09:00:00
 categories: [research, internship, bioinformatics]
 ---
 
-I completed a research internship at EMBL-EBI as part of my second Master's year.
+This internship was completed as part of the second year of my Data Science Master's program.
 
 ## Role & Context
 

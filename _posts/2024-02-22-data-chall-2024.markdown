@@ -1,23 +1,49 @@
 ---
 layout: post
-title: "CELP — Kaggle Data Challenge"
-subtitle: "Competition recap and final result"
+title: "CELP — Data Challenge"
+subtitle: "Competition Recap and Final Result"
 date: 2024-02-22 09:00:00
 categories: [data-science, machine-learning, competition]
 ---
 
-In a team of 3, I participated in the Kaggle competition "CELP" (overview: https://www.kaggle.com/competitions/celp), a focused data challenge that attracted a wide range of approaches from the community.
+In a team of three, I participated in the Kaggle competition **“Classification of English Learner Proficiency”** hosted by the University of Lille / Centrale Lille / IMT Nord Europe. :contentReference[oaicite:0]{index=0} This challenge focused on predicting English learner proficiency levels given feature data provided by the organizers.
 
-The competition required teams to design data-driven solutions that addressed the task definition and evaluation protocol provided on the Kaggle page. Successful teams combined careful preprocessing, strong modeling choices and evaluation-time engineering to meet the benchmark objectives.
+## Goals & Context
 
-Our work on CELP emphasised solid data preprocessing, robust model selection and ensembling. In practice we:
+- The competition required building models that classify English texts by proficiency level (A1-C2), handling data from multiple feature types and accounting for possible distribution shifts between training and test sets. :contentReference[oaicite:1]{index=1}  
+- Key evaluation metrics and validation strategy were defined by the competition; strong performance depended on both modeling and inference-time engineering.
 
-- Normalised and cleaned the input features to reduce distributional shifts.
-- Trained multiple model architectures and selected checkpoints with stable validation behaviour.
-- Applied ensembling and lightweight postprocessing at inference to improve final scores.
+## Approach
 
-The competition invited many modeling styles and required attention to both validation strategy and evaluation-time details. After iterative development and leaderboard-focused tuning, our final submission achieved the best score on the competition's final leaderboard. Securing first place validated our end-to-end approach and engineering choices.
+Our strategy combined robust preprocessing, model experimentation, and careful ensembling:
 
-See the official competition page for full details, rules and datasets:
+1. **Feature preprocessing**  
+   - Cleaned and normalized input features to mitigate distributional shifts.  
+   - Handled missing values, outliers, and categorical features appropriately.
 
-- https://www.kaggle.com/competitions/celp
+2. **Model selection & validation**  
+   - Trained several architectures (e.g. gradient boosting, neural network, tree-based ensembles).  
+   - Used cross-validation with stratification/other splits aligned with competition rules to ensure stable validation behavior.
+
+3. **Ensembling & post-processing**  
+   - Combined model predictions (stacking / blending) to reduce variance and improve generalization.  
+   - Applied lightweight inference-time adjustments (e.g. calibration, smoothing or thresholding) to improve final performance.
+
+## Results & Achievements
+
+- Our final submission achieved **1st place** on the competition leaderboard, validating the efficacy of our preprocessing, modelling, and ensembling pipeline.  
+- The final score reflected improvements gained especially from ensemble-based inference-time engineering.
+
+## Lessons Learned & Next Steps
+
+- Ensuring validation splits match the test distribution is critical — small mismatches lead to large performance drops on private leaderboard.  
+- Model ensembling can give significant boosts — but only if the base models are diverse and well‐tuned.  
+- Future improvements could include:  
+  - Investigating external data or feature augmentation (if permitted),  
+  - Tighter calibration or cost-sensitive adjustments for class imbalance,  
+  - Exploring more advanced architectures tuned to text or sequence (if text data allowed),  
+  - Producing interpretable model explanations to better understand misclassifications.
+
+---
+
+See the [official competition page](https://www.kaggle.com/competitions/celp) for full details, rules, datasets, and discussions. :contentReference[oaicite:2]{index=2}

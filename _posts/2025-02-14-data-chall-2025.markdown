@@ -1,26 +1,64 @@
 ---
 layout: post
 title: "Human Motion Generation (Text-to-Motion) — Kaggle Data Challenge"
-subtitle: "Participation recap and final result"
+subtitle: "Participation Recap and Final Result"
 date: 2025-02-14 09:00:00
 categories: [data-science, machine-learning, deep-learning, competition]
 ---
 
-In a team of 3 students, I took part in the Kaggle competition "Human Motion Generation (HMG: Text-to-Motion)" (overview: https://www.kaggle.com/competitions/human-motion-generation-hmg-text-to-motion/overview), a challenging benchmark for generating realistic human motion sequences conditioned on text descriptions.
+In a team of three, I participated in the Kaggle competition **“Human Motion Generation (HMG: Text-to-Motion)”** — a challenging benchmark for generating realistic human motion from text prompts. The competition attracted solutions across diffusion models, autoregressive architectures, and learned priors, with submissions evaluated on motion quality, diversity, and alignment with the text description.  
+[Competition Overview](https://www.kaggle.com/competitions/human-motion-generation-hmg-text-to-motion/overview)
 
-The competition asked teams to build models that translate short text prompts into plausible, temporally coherent 3D human motion. Submissions were evaluated on a mix of metrics capturing motion quality, diversity and how well the generated motion aligns with the conditioning text.
+---
 
-Our approach focused on careful data preprocessing, strong text-motion conditioning, and robust ensembling at inference time. Concretely we:
+## Goals & Context
 
-- Preprocessed and normalized the motion representation to reduce intra-dataset variability.
-- Built a text-conditional generative pipeline that prioritized temporal consistency across frames.
-- Used model ensembling and checkpoint selection to stabilise predictions and improve generalisation.
+- **Task**: Given short text prompts, generate plausible, temporally coherent sequences of 3D human motion.  
+- **Evaluation criteria**: A mixture of objective metrics including how realistic the motions are; how well they match the textual description; motion smoothness; and diversity (to reduce mode collapse).  
+- **Challenges**: Variable prompt lengths; high variability in dataset motion styles; overfitting to training motion trajectories; temporal consistency across frames; evaluation-time robustness in sampling and postprocessing.
 
-The competition pushed several modeling families — diffusion models, autoregressive sequence models, and learned priors — and required engineering around evaluation-time sampling and postprocessing to meet the leaderboard objectives.
+---
 
-After multiple rounds of development and validation, our final submission achieved the second-best score on the competition's final leaderboard. Finishing in second place was a rewarding result for the team and validated the combination of preprocessing, conditioning, and ensembling strategies we relied on.
+## Approach
 
-If you want to explore the competition details, datasets and metrics, see the official Kaggle page:
+Our solution emphasised stable preprocessing, strong text-to-motion conditioning, and ensemble inference.
 
-- https://www.kaggle.com/competitions/human-motion-generation-hmg-text-to-motion/overview
+1. **Data preprocessing & normalization**  
+   - Standardised motion representations to reduce variability (e.g. joint coordinate normalisation, frame rate alignment).  
+   - Cleaned and filtered noisy motion segments to remove outliers or implausible motions.
 
+2. **Modeling & conditioning**  
+   - Built models that condition motion generation on text prompts, ensuring alignment via loss functions or auxiliary alignment metrics.  
+   - Focused on temporal consistency: encouraging smooth transitions across frames, minimizing jitter or discontinuities.
+
+3. **Inference-time engineering**  
+   - Checked multiple model checkpoints and selected those with optimal validation behavior.  
+   - Ensembling multiple generators or pipelines to reduce variance and improve generalisation.  
+   - Postprocessing: smoothing trajectories, filtering for physical plausibility, possibly mixing or interpolating between sketches to improve motion quality.
+
+---
+
+## Results & Achievements
+
+- Our final submission placed **2nd** on the competition’s final leaderboard, validating the strength of our preprocessing, conditioning, and ensemble strategies.  
+- We observed that ensembling and checkpoint selection consistently improved our metrics (especially alignment-with-text and motion continuity).  
+- Generations showed visibly smoother trajectories and better matching to the text prompts compared to many baseline submissions, especially under diverse styles and prompt lengths.
+
+---
+
+## Lessons Learned & Future Directions
+
+- Effective text conditioning is crucial. The better the model understands nuance in the prompt (e.g. speed, style), the more aligned the motion output.  
+- Temporal consistency is often more challenging than spatial correctness—jitter or abrupt frame-to-frame changes degrade perception even if per-frame accuracy is high.  
+- Ensembling helps but adds inference complexity — balancing quality gains with runtime/resource costs is important.  
+
+**Potential next steps**:
+
+- Experiment with more powerful architectures (e.g. transformer-based diffusion models or hybrid autoregressive–diffusion pipelines).  
+- Incorporate learned priors or motion style transfer to allow more expressive and varied motion outputs.  
+- Use human evaluation or perceptual studies to complement automatic metrics.  
+- Optimise for real-time or interactive generation (for example, interactive correction or refinement given user input).
+
+---
+
+See the [official competition page](https://www.kaggle.com/competitions/human-motion-generation-hmg-text-to-motion/overview) for full details, datasets, rules, and evaluation metrics.

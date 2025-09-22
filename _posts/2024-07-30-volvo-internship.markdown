@@ -1,49 +1,63 @@
 ---
 layout: post
 title: "Electrification potential of a client’s fleet using GPS data"
-subtitle: "Volvo Group — Data Science internship"
+subtitle: "Volvo Group — Data Science Internship"
 date: 2024-07-30 09:00:00
 categories: [industry, internship, data-science]
 ---
 
-I completed a data science internship at Volvo Group as part of the first year of my Master's degree in Data Science.
+This internship was completed as part of the first year of my Data Science Master's program.
 
 ## Role & Context
 
-- Position: Data Science Intern
-- Host: Volvo Group - Renault Trucks
-- Period: April - July 2024
+- Position: Data Science Intern  
+- Host: Volvo Group – Renault Trucks, Technology & Service Development  
+- Period: April — July 2024  
+- Supervisor: Benjamin Echard  
 
-The internship combined applied data engineering, modelling and evaluation work in an industrial setting. My work aimed to deliver a reproducible pipeline and a clear set of deliverables that the host team could use after the internship.
+The internship focused on applied data science for sustainable transport: building tools to evaluate the electrification potential of heavy-duty truck fleets using GPS and telematics data, and delivering visual, reproducible outputs for business and technical stakeholders.
 
 ## Objectives
 
-- Understand the business and technical context at Volvo and define measurable goals.
-- Build a data pipeline to extract, clean and aggregate the relevant signals.
-- Prototype and evaluate models addressing the defined problem, with clear evaluation metrics and validation protocols.
-- Deliver code artefacts and a final presentation to the host team.
+- Anticipate electrification needs of long-haul fleets using GPS data.  
+- Develop a tool to analyse customer fleets, rank depots by electrification potential, and propose charging strategies.  
+- Provide visual and quantitative results (figures, dashboards, and maps) to support customer decisions on electrification investments.  
+- Deliver code artefacts, notebooks, and a final presentation usable by the host teams.
 
 ## Methods & Tools
 
-The internship used a standard data-science workflow with reproducible code and experiments. Tools and libraries used include:
+Work combined geospatial analysis, big data processing, and visualization:
 
-- Python (data manipulation with `pandas`, experiments with `scikit-learn` / `tensorflow` where relevant)
-- Jupyter notebooks for exploration and analysis
-- Git for version control
-- Conda/`environment.yml` for environment management
-- Basic data engineering (CSV/Parquet handling, lightweight ETL)
-- Spatial data: handled 3D coordinates (lat, lon, alt) and performed H3 hexagonal aggregation with `geopandas`/`h3` for scalable spatial analysis.
-
+- **Data access & preprocessing**: GPS and telematics data retrieved via ODBC, cleaned with Spark & Python. Stop/trip files generated, noisy data filtered, and stops merged into ≥30 min charging opportunities.  
+- **Geospatial stack**:  
+  - `GeoPandas` and `Shapely` for geometric operations (points, polygons, buffers).  
+  - Coordinate Reference Systems (EPSG:4171, EPSG:2154) for distance-preserving operations.  
+  - `H3` hierarchical hexagonal grid for depot detection, base merging, and stop aggregation.  
+- **Storage & computation**: Apache Parquet for columnar storage; Spark (PySpark) for large-scale filtering and joins.  
+- **Visualisation**: Plotly for histograms, CDFs, and interactive plots; Folium for interactive fleet and depot maps with layers (stops, heatmaps, bases, stations). PowerBI dashboards for depot ranking and business reporting.  
+- **Algorithm**: “Electrification score” simulation with five charging strategies (from a single AC depot station up to AC+DC stations, public infrastructure, and one/two optimally placed DC stations). Score = fraction of mission energy achievable under electric constraints. Threshold of 80% used to classify electrifiable vehicles.
 
 ## Outcomes & Deliverables
 
--- Reproducible code and notebooks for data preprocessing, model training and evaluation.
--- A set of recommendations and next steps for the host team to continue development or productionise the solution.
+- **Fleet electrification tool**: produced stop/trip preprocessing, depot/base identification, and electrification simulations for ~35 weeks of 2023 GPS data.  
+- **Depot ranking**: scoring routine applied across depots, producing ranked histograms of electrification potential.  
+- **Dashboards & maps**:  
+  - PowerBI report with depot-level scores, fleet composition, simulation durations, and depot maps.  
+  - Folium HTML maps with interactive heatmaps, bounding boxes, and charging stations.  
+- **Example results**:  
+  - Vehicles’ energy scores improved progressively from Config. 1 (AC only) through Config. 5 (two optimal DC stations).  
+  - Optimal station placement identified using H3 aggregation, maximizing depot-level electrification with minimal infrastructure.  
 
-Quantitative results (metrics, ablation studies, or dashboards) are documented in the internship notebooks and code artefacts.
+These deliverables were used internally to support customer-facing discussions on electrification strategy.
 
 ## Lessons & Next Steps
 
-- The internship strengthened skills in data engineering for applied problems, experiment tracking and communicating technical results to non-technical stakeholders.
-- Recommended next steps include automating the data pipeline, extended evaluation on production data and exploring model deployment options.
+- Strengthened skills in geospatial data science, Spark-based preprocessing, and communicating technical insights to both engineers and business owners.  
+- Learned to balance computation realism (continuous simulations, charging assumptions) with feasibility and performance.  
+- Recommended next steps:  
+  - Sensitivity analyses on thresholds (stop definition, base detection, night stops).  
+  - Simulations at finer granularity (per week/day) to better capture mission variability.  
+  - Incorporating infrastructure constraints (station availability/occupancy).  
+  - Extending visual dashboards with automation for recurring customer studies.  
 
+---
