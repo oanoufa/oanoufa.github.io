@@ -5,8 +5,7 @@ subtitle: Resume
 permalink: /about/
 ---
 
-Engineering student at Ecole Centrale de Lille.
+Data Scientist based in France.
 
-First year graduate student in Data Science at Ecole Centrale de Lille, University of Lille and IMT Nord-Europe.
-
-[Download my business card](https://github.com/OlitHub/BusinessCard/releases/download/v2.0/card.pdf "download")
+Graduated from Ecole Centrale de Lille, University of Lille and IMT Nord-Europe with a Master's degree in Data Science (2025).
+Graduated from Ecole Centrale de Lille with an Engineering degree (2025).

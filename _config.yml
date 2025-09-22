@@ -1,16 +1,15 @@
 # Site settings
 title: Olivier Anoufa
 description: >
-  Graduate student in Data Science, Engineering student at Ecole Centrale de Lille
+  Data Scientist. Graduated from Ecole Centrale de Lille, University of Lille and IMT Nord-Europe with a Master's degree in Data Science (2025). Graduated from Ecole Centrale de Lille with an Engineering degree (2025).
 
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "https://olithub.github.io" # the base hostname & protocol for your site
+url: "https://oanoufa.github.io" # the base hostname & protocol for your site
 
 author:
   fullname: Olivier Anoufa
   email: oanoufa@gmail.com
-  github: olithub
-  twitter: spyrolive
+  github: oanoufa
 
 # google_analytics: 'UA-XXXXXXXX-X'
 
