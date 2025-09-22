@@ -1,0 +1,26 @@
+---
+layout: post
+title: "Human Motion Generation (Text-to-Motion) — Kaggle Data Challenge"
+subtitle: "Participation recap and final result"
+date: 2025-02-14 09:00:00
+categories: [data-science, machine-learning, deep-learning, competition]
+---
+
+In a team of 3 students, I took part in the Kaggle competition "Human Motion Generation (HMG: Text-to-Motion)" (overview: https://www.kaggle.com/competitions/human-motion-generation-hmg-text-to-motion/overview), a challenging benchmark for generating realistic human motion sequences conditioned on text descriptions.
+
+The competition asked teams to build models that translate short text prompts into plausible, temporally coherent 3D human motion. Submissions were evaluated on a mix of metrics capturing motion quality, diversity and how well the generated motion aligns with the conditioning text.
+
+Our approach focused on careful data preprocessing, strong text-motion conditioning, and robust ensembling at inference time. Concretely we:
+
+- Preprocessed and normalized the motion representation to reduce intra-dataset variability.
+- Built a text-conditional generative pipeline that prioritized temporal consistency across frames.
+- Used model ensembling and checkpoint selection to stabilise predictions and improve generalisation.
+
+The competition pushed several modeling families — diffusion models, autoregressive sequence models, and learned priors — and required engineering around evaluation-time sampling and postprocessing to meet the leaderboard objectives.
+
+After multiple rounds of development and validation, our final submission achieved the second-best score on the competition's final leaderboard. Finishing in second place was a rewarding result for the team and validated the combination of preprocessing, conditioning, and ensembling strategies we relied on.
+
+If you want to explore the competition details, datasets and metrics, see the official Kaggle page:
+
+- https://www.kaggle.com/competitions/human-motion-generation-hmg-text-to-motion/overview
+
