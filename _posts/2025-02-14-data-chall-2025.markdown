@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Human Motion Generation (Text-to-Motion) — Kaggle Data Challenge"
-subtitle: "Participation Recap and Final Result"
+title: "HMG — Data Challenge"
+subtitle: "Competition Recap and Final Result"
 date: 2025-02-14 09:00:00
 categories: [data-science, machine-learning, deep-learning, competition]
 ---
