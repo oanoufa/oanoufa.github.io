@@ -15,7 +15,7 @@ This internship was completed as part of the second year of my Data Science Mast
 - Supervisors: Nicola De Maio and Nick Goldman  
 - Period: April — September 2025
 
-The internship focused on applied bioinformatics research: detecting and masking contamination in SARS-CoV-2 genome data and developing scalable analysis procedures for pandemic-scale datasets.
+The internship focused on applied bioinformatics research: detecting and masking contamination in SARS-CoV-2 genome data, and assessing the impact of masking on phylogenetic placement.
 
 ## Objectives
 

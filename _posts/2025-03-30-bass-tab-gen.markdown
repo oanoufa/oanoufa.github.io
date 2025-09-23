@@ -44,4 +44,3 @@ The project develops a conditional generative system that produces bass guitar t
 - **Demo website:** https://adhooge.github.io/BassTablatureGeneration/
 - **Paper** Published at AIMC 2025: https://doi.org/10.5281/zenodo.16946476
 
-If you'd like, I can expand this post with a technical methods section, sample tablature outputs, or a short tutorial showing how to run the demo locally.
